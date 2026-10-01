@@ -1,0 +1,58 @@
+{
+	"manifest_version": 2,
+	"name": "Container Manager",
+	"version": "1.0.0",
+	"description": "Open matching URLs in Firefox containers and assign a separate proxy to each container.",
+	"developer": {
+		"name": "ergolyam",
+		"url": "mailto:grisha765@tuta.io"
+	},
+	"incognito": "not_allowed",
+	"permissions": [
+		"<all_urls>",
+		"contextualIdentities",
+		"cookies",
+		"proxy",
+		"storage",
+		"tabs",
+		"webRequest",
+		"webRequestBlocking"
+	],
+	"background": {
+		"scripts": [
+			"background/tab-updated-listener.js",
+			"background/proxy-manager.js"
+		]
+	},
+	"icons": {
+		"48": "icon.svg",
+		"96": "icon.svg"
+	},
+	"browser_action": {
+		"default_title": "Container Manager",
+		"theme_icons": [
+			{
+				"light": "icon-light.svg",
+				"dark": "icon-dark.svg",
+				"size": 16
+			},
+			{
+				"light": "icon-light.svg",
+				"dark": "icon-dark.svg",
+				"size": 32
+			}
+		],
+		"default_popup": "settings/settings.html"
+	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{1c510b0d-171b-41ee-b598-b016aa9244ca}",
+			"strict_min_version": "138.0",
+			"data_collection_permissions": {
+				"required": [
+					"none"
+				]
+			}
+		}
+	}
+}

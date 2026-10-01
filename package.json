@@ -1,0 +1,42 @@
+{
+	"name": "container-manager",
+	"description": "Open matching URLs in Firefox containers and assign a separate proxy to each container.",
+	"license": "GPL-3.0-or-later",
+	"private": true,
+	"scripts": {
+		"start": "concurrently \"webpack --watch\" \"web-ext run --source-dir build/webpack\"",
+		"watch:webpack": "webpack --watch",
+		"lint": "web-ext lint",
+		"build": "webpack && web-ext build",
+		"build:webpack": "webpack",
+		"sign": "dotenv -- web-ext sign --channel=listed",
+		"sign:dev": "dotenv -- web-ext sign --channel=unlisted",
+		"clean": "npm run clean:webpack && npm run clean:extension",
+		"clean:webpack": "rm -rf build",
+		"clean:extension": "rm -rf web-ext-artifacts",
+		"test": "node --test"
+	},
+	"dependencies": {
+		"concurrently": "^7.2.2",
+		"copy-webpack-plugin": "^11.0.0",
+		"css-loader": "^6.7.1",
+		"html-webpack-plugin": "^5.5.0",
+		"sass": "^1.53.0",
+		"sass-loader": "^13.0.2",
+		"style-loader": "^3.3.1",
+		"uuid": "^8.3.2",
+		"vue": "^3.2.37",
+		"vue-loader": "^17.0.0",
+		"web-ext": "10.7.0",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"devDependencies": {
+		"dotenv-cli": "^11.0.0"
+	},
+	"version": "1.0.0",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"packageManager": "yarn@1.22.22"
+}
