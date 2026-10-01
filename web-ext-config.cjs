@@ -9,7 +9,7 @@ module.exports = {
 	sourceDir: 'build/webpack',
 	build: {
 		overwriteDest: true,
-		filename: `container_urls_and_proxies-${version}.xpi`,
+		filename: `container_manager-${version}.xpi`,
 	},
 }
 
