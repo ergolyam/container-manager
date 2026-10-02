@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Container Manager",
-	"version": "1.0.0",
+	"version": "1.0.0.1",
 	"description": "Open matching URLs in Firefox containers and assign a separate proxy to each container.",
 	"developer": {
 		"name": "ergolyam",
