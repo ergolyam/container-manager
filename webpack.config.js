@@ -21,6 +21,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: require.resolve('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'),
+				loader: path.resolve(__dirname, 'vue-static-content-loader.cjs'),
+			},
+			{
 				test: /\.vue$/,
 				loader: 'vue-loader',
 			},
